@@ -1,0 +1,32 @@
+'use client';
+
+import React, { createContext, useContext, useState, ReactNode } from 'react';
+
+interface LanguageContextType {
+  isSimpleMode: boolean;
+  toggleMode: () => void;
+}
+
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const [isSimpleMode, setIsSimpleMode] = useState(false);
+
+  const toggleMode = () => {
+    setIsSimpleMode((prev) => !prev);
+  };
+
+  return (
+    <LanguageContext.Provider value={{ isSimpleMode, toggleMode }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+}
+
+export function useLanguage() {
+  const context = useContext(LanguageContext);
+  if (context === undefined) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
+}
