@@ -1,9 +1,11 @@
 🗳️ ElectraGuide (VoxAgent)
 
+🚀 LIVE DEMO: https://electoralguide-frontend-1008148518956.us-central1.run.app/
+
 The Agentic "Truth Engine" for the 2026 Global Election Cycle
 ElectraGuide is a decentralized Civic OS designed to safeguard election integrity through real-time bias auditing, cryptographic security simulations, and multi-national voter intelligence. Built using a "Vibe Coding" architecture, it leverages a massive 25,000-character reasoning framework to provide unbiased, high-fidelity civic assistance.
 
-🚀 LIVE DEMO: View the Production App
+🚀 LIVE DEMO:
 ✨ Key Features
 🛡️ Media Shield (Bias Analyzer): Real-time NLP analysis of news headlines using an Unbiased Reasoning Loop to detect proxy variables and loaded language.
 
