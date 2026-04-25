@@ -1,8 +1,5 @@
-A great README.md is the difference between a judge spending 30 seconds on your project and them actually understanding the engineering brilliance behind it. Since you are in the top 1% by having a live Cloud Run deployment, your README should scream "Production Ready."
-
-Here is the perfect structure to copy and paste into your README.md file:
-
 🗳️ ElectraGuide (VoxAgent)
+
 The Agentic "Truth Engine" for the 2026 Global Election Cycle
 ElectraGuide is a decentralized Civic OS designed to safeguard election integrity through real-time bias auditing, cryptographic security simulations, and multi-national voter intelligence. Built using a "Vibe Coding" architecture, it leverages a massive 25,000-character reasoning framework to provide unbiased, high-fidelity civic assistance.
 
