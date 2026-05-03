@@ -1,11 +1,23 @@
 'use client';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-export default function FairnessScorecard({ inline = false }: { inline?: boolean }) {
+/**
+ * Renders a visual representation of the fairness scorecard.
+ *
+ * @param {Object} props - The component props.
+ * @param {boolean} [props.inline=false] - Whether to render the scorecard in inline mode.
+ * @returns {JSX.Element} The rendered FairnessScorecard component.
+ */
+export default function FairnessScorecard({
+  inline = false,
+}: {
+  inline?: boolean;
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={inline ? "relative" : "fixed top-4 right-4 z-50"}>
+    <div className={inline ? 'relative' : 'fixed top-4 right-4 z-50'}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
@@ -29,27 +41,42 @@ export default function FairnessScorecard({ inline = false }: { inline?: boolean
           </h2>
           <ul className="space-y-3 text-sm">
             <li className="flex justify-between items-center">
-              <span className="text-slate-600 dark:text-slate-300">Neutrality Score</span>
+              <span className="text-slate-600 dark:text-slate-300">
+                Neutrality Score
+              </span>
               <span className="font-mono font-bold text-green-600">100</span>
             </li>
             <li className="flex justify-between items-center">
-              <span className="text-slate-600 dark:text-slate-300">Evidence Coverage</span>
+              <span className="text-slate-600 dark:text-slate-300">
+                Evidence Coverage
+              </span>
               <span className="font-mono font-bold text-green-600">100%</span>
             </li>
             <li className="flex justify-between items-center">
-              <span className="text-slate-600 dark:text-slate-300">Loaded Language</span>
+              <span className="text-slate-600 dark:text-slate-300">
+                Loaded Language
+              </span>
               <span className="font-mono font-bold text-green-600">0</span>
             </li>
             <li className="flex justify-between items-center">
-              <span className="text-slate-600 dark:text-slate-300">Source Diversity</span>
+              <span className="text-slate-600 dark:text-slate-300">
+                Source Diversity
+              </span>
               <span className="font-mono font-bold text-green-600">100</span>
             </li>
           </ul>
           <div className="mt-4 pt-3 border-t border-slate-200 dark:border-slate-700 text-xs text-slate-500 text-center">
-            Status: <span className="font-bold text-civic-blue">PASS (System Default)</span>
+            Status:{' '}
+            <span className="font-bold text-civic-blue">
+              PASS (System Default)
+            </span>
           </div>
         </div>
       )}
     </div>
   );
 }
+
+FairnessScorecard.propTypes = {
+  inline: PropTypes.bool,
+};
