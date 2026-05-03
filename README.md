@@ -4,7 +4,7 @@
 
 ElectraGuide is a decentralized Civic OS designed to safeguard election integrity through real-time bias auditing, cryptographic security simulations, and multi-national voter intelligence.
 
-🚀 **LIVE DEMO:** [ElectraGuide Live](https://electoralguide-frontend-1008148518956.us-central1.run.app/)
+🚀 **LIVE DEMO:** [ElectraGuide Live](https://electoralguide-frontend-1008148518956.us-central1.run.app)
 
 ---
 
