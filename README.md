@@ -1,45 +1,78 @@
-🗳️ ElectraGuide (VoxAgent)
+# 🗳️ ElectraGuide (VoxAgent) — Google AI Prompt Wars Submission
 
-🚀 LIVE DEMO: https://electoralguide-frontend-1008148518956.us-central1.run.app/
+**The Agentic "Truth Engine" for the Global Election Cycle**
 
-The Agentic "Truth Engine" for the 2026 Global Election Cycle
 ElectraGuide is a decentralized Civic OS designed to safeguard election integrity through real-time bias auditing, cryptographic security simulations, and multi-national voter intelligence.
 
+🚀 **LIVE DEMO:** [ElectraGuide Live](https://electoralguide-frontend-1008148518956.us-central1.run.app/)
 
-🎯 Chosen Vertical: Election Process Education & Unbiased AI
-Our solution focuses on bridging the gap between complex election security and voter comprehension, ensuring that every citizen has access to neutral, audited information.
+---
 
-🧠 Approach & Logic
-Instead of a simple chatbot, we engineered an Agentic Workforce using a 25,000-character reasoning framework.
+## 🧠 AI Architecture & Prompt Engineering (Prompt Wars Highlight)
 
-The Reasoning Loop: Every input is passed through an "Unbiased Filter" that detects proxy variables and loaded language before generating a response.
+This project was built from the ground up to showcase advanced capabilities of the Gemini API. Instead of a simple wrapper, ElectraGuide acts as an **Agentic Workforce**.
 
-Bento-Box Architecture: Separating the frontend (UI), backend (Logic), and AI (Reasoning) into modular "compartments" for 100% maintainability.
+### 1. Model Selection & Optimization
+- **Core Engine:** `gemini-flash-latest`
+- **Why Flash?** We chose the Flash model to achieve ultra-low latency for our real-time floating chatbot (VoxAssist) while maintaining high-fidelity reasoning for text analysis. Flash provides the perfect balance of speed and intelligence required for a consumer-facing civic platform.
 
-🛠️ Google Services Integration
-Gemini 3.1 Pro: Acts as the primary "Truth Engine" for NLP analysis.
+### 2. Structured Output (JSON Schema)
+To ensure reliable integration with our React frontend components, we heavily utilize Gemini's structured output capabilities (`responseMimeType: 'application/json'`).
+- **Media Shield Analyzer:** When a user submits a news headline, Gemini doesn't return a text paragraph. It returns a strictly typed JSON object containing:
+  - `biasRating` (0-100 index)
+  - `credibilityScore`
+  - `loadedLanguage` (Array of detected manipulative words)
+  - `missingContext` (Factual gaps in the submitted text)
+  This allows our UI to render beautiful, interactive data visualizations (like Radar and Gauge charts) directly from the AI's "thoughts."
 
-Google Antigravity: Used for rapid Vibe Coding and deployment orchestration.
+### 3. Strict System Instructions & Hallucination Mitigation
+We employ aggressive System Prompts to force the AI into a neutral, factual constraint box, which is critical for election tech.
+- **VoxAgent Protocol:** *"You are VoxAgent, an unbiased electoral guide for Indian and global elections. Answer questions about voting processes, candidates, electoral laws, and democratic systems. Always cite which country/region you are referring to. Never express political opinions. Keep answers concise."*
+- **Manifesto Auditor Protocol:** Forces the model to extract purely objective platform stances without applying moral judgments, comparing candidates across standard dimensions (Economy, Healthcare, Education).
 
-Google Cloud Run: Hosts our containerized microservices, providing 99.9% uptime for voters.
+---
 
-🔍 Assumptions Made
-Connectivity: Assumes voters have intermittent internet access (optimized for low-bandwidth environments).
+## ✨ Core Features
 
-Security: Assumes the M3-EVM protocol remains the standard for 2026 digital ballots.
+| Feature | Description |
+|---|---|
+| 🛡️ **Media Shield** | AI-powered headline bias analyzer using Google Gemini to dissect loaded language. |
+| 💬 **VoxAssist Chatbot** | Floating AI chat assistant for quick civic Q&A, adapts to Simple/Expert language modes. |
+| ⚖️ **Manifesto Auditor** | Comparative AI analysis of candidate platforms across key societal metrics. |
+| 🗺️ **Global Heatmap** | Interactive Google Maps view of active worldwide elections. |
+| 🔐 **Security Lab** | Visual simulations of EVM chain-of-custody and cryptographic handshake protocols. |
+| 🌐 **Multilingual Support** | Real-time translation into Hindi, Tamil, Telugu, and Bengali via Google Cloud Translation API. |
 
-Neutrality: Assumes that providing a Fairness Scorecard is more effective than "fact-checking" for building voter trust.
+---
 
-✨ Key Features
-🛡️ Media Shield (Bias Analyzer): Detects bias in news headlines.
+## 🛠️ Tech Stack & Integrations
 
-🔐 Security Lab: Interactive simulation of "Crypto-Handshake" protocols.
+- **Frontend:** Next.js 16 (App Router), React, TailwindCSS
+- **Authentication:** Google Identity Services (One Tap) & Firebase Auth
+- **Database:** Firebase Firestore (Realtime Community Polls, User Preferences)
+- **AI / ML:** Google Generative AI SDK (`gemini-flash-latest`)
+- **Visualizations:** Google Charts API
+- **Cloud Infrastructure:** Google Cloud Run
 
-🧩 Simple Mode: One-toggle accessibility for universal comprehension (WCAG 2.1).
+---
 
-📂 Tech Stack
-Frontend: Next.js 14 (App Router)
+## 🚀 Running Locally
 
-Backend: Spring Boot (Hexagonal Architecture)
+### Prerequisites
+- Node.js v20+
+- A Google Cloud project with the **Generative Language API (Gemini)**, **Maps JavaScript API**, and **Cloud Translation API** enabled.
 
-Cloud: Google Cloud Run (Docker)
+### Quick Start
+
+```bash
+git clone <your-repo-url>
+cd ElectraGuide/frontend
+npm install
+cp .env.example .env.local # Fill in your Google API keys here
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the app locally.
+
+---
+*Built for Google AI Prompt Wars.*
