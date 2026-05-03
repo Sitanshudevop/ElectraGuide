@@ -66,7 +66,7 @@ export async function analyzeWithNLP(text: string): Promise<NlpAnalysisResult> {
       magnitude,
       label,
     },
-    entities: (entitiesRes.entities || []).map((e: any) => ({
+    entities: (entitiesRes.entities || []).map((e: { name: string; type: string; salience: number }) => ({
       name: e.name,
       type: e.type,
       salience: e.salience,

@@ -194,8 +194,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       if (!gis || !auth) return;
 
       // Prevent multiple initializations in React Strict Mode
-      if ((window as any)._gsiInitialized) return;
-      (window as any)._gsiInitialized = true;
+      const globalWindow = window as Window & typeof globalThis & { _gsiInitialized?: boolean };
+      if (globalWindow._gsiInitialized) return;
+      globalWindow._gsiInitialized = true;
 
       gis.accounts.id.initialize({
         client_id: clientId,

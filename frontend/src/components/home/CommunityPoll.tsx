@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { doc, onSnapshot, updateDoc, increment, setDoc } from 'firebase/firestore';
+import { doc, onSnapshot, increment, setDoc } from 'firebase/firestore';
 import { db } from '@/firebase';
 
 interface PollData {
@@ -28,8 +28,10 @@ export default function CommunityPoll() {
     if (typeof window !== 'undefined') {
       const vote = sessionStorage.getItem('electraguide_poll_voted');
       if (vote) {
-        setHasVoted(true);
-        setSelectedOption(vote);
+        Promise.resolve().then(() => {
+          setHasVoted(true);
+          setSelectedOption(vote);
+        });
       }
     }
   }, []);

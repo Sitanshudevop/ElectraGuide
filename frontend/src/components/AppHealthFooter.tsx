@@ -8,8 +8,8 @@ export default function AppHealthFooter() {
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
-    // Initial fetch
-    setTimings(getTimings());
+    // Initial fetch (deferred to avoid synchronous state update in effect)
+    Promise.resolve().then(() => setTimings(getTimings()));
 
     // Subscribe to updates
     const unsubscribe = subscribeTimings(() => {
